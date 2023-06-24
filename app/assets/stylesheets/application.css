@@ -8,6 +8,8 @@
 
 :root {
     --main-bg-color: #3b82f6;
+    --main-bg-color-light: #ecf3ff;
+    --main-bg-color-dark: #29569e;
 }
 
 a {
@@ -54,3 +56,124 @@ footer p {
     color: white;
 }
 
+.login-container {
+    height: 100vh;
+    background-color: var(--main-bg-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 10vw;
+}
+
+.login-container > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container div:first-child {
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.login-logo {
+    width: 30vw;
+}
+
+.login-container p {
+    color: white;
+    font-size: 20px;
+}
+
+.login-inputs {
+    background-color: white;
+    border-radius: 30px;
+    height: fit-content;
+    width: fit-content;
+    align-self: center;
+    justify-self: center;
+    padding: 40px;
+    position: relative;
+    box-shadow: 3px 3px 10px 0px #00000088;
+}
+
+.login-inputs p {
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--main-bg-color);
+    margin-bottom: 14px;
+}
+
+.login-inputs input[type="text"], .login-inputs input[type="password"] {
+    width: 350px;
+    margin-top: 6px;
+    padding: 10px 8px;
+    border-radius: 8px;
+    outline: none;
+    border: solid 1px var(--main-bg-color);
+    background-color: rgb(241, 244, 250);
+}
+
+.login-inputs input[type="text"]:focus, .login-inputs input[type="password"]:focus {
+    box-shadow: 0px 0px 4px 2px rgba(99, 99, 255, 0.284);
+    transition: 0.3s;
+
+}
+
+.login-inputs form {
+    display: flex;    
+    flex-direction: column;
+    gap: 18px;
+}
+
+.login-inputs form label {
+    font-size: 16px;
+}
+
+.login-inputs input[type="submit"] {
+    background-color: var(--main-bg-color);
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    padding: 10px 0px;
+    color: white;
+    font-size: 20px;
+}
+
+.login-inputs input[type="submit"]:hover {
+    background-color: var(--main-bg-color-dark);
+    transition: 0.3s;
+}
+
+.error-messages {
+    color:red;
+    font-size: 16px;
+    position: absolute;
+    bottom: 25px;
+}
+
+.sign-up-btn {
+    background-color: rgb(54, 200, 54);
+    padding: 10px 30px;
+    color: white;
+    border-radius: 8px;
+    padding: 10px 0px;
+    font-size: 20px;
+    width: 40%;
+    text-align: center;
+}
+
+.sign-up-btn:hover {
+    background-color: rgb(35, 122, 35);
+    transition: 0.3s;
+}
+
+.forgot-password {
+    color: var(--main-bg-color);
+    margin-top: 6px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}

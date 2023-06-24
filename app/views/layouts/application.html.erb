@@ -8,13 +8,11 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <style><%= yield :stylesheets %></style>
   </head>
 
   <body>
     <%= render "layouts/navbar" %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <div class="main-container"><%= yield %></div>
-    <%= render "layouts/footer" %>    
-  </body>
+    <%= render "layouts/footer" %>
 </html>
