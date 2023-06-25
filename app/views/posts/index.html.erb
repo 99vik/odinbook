@@ -1,12 +1,6 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
 
 <%= render 'form' %>
 
-<% if @posts %>
-    <% @posts.each do |post| %>
-        <p>Author: <%= post.author.username %></p>
-        <p>Body: <%= post.body %></p>
-        <p><%= post.datetime.to_fs(:short) %></p>
-    <% end %>
-<% end %>
+
+
+<div class="posts-container"><%= render @posts %></div>

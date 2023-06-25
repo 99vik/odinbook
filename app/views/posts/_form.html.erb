@@ -1,9 +1,7 @@
-<%= form_with model: @post do |form| %>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+<%= form_with model: @post, class: "post-form" do |form| %>
+    <div class="field">
+      <%= form.label :body, "Write new post" %><br>
+      <%= form.text_area :body %>
+    </div>
+    <div class="field"><%= form.submit %></div>
 <% end %>

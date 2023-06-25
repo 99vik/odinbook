@@ -1,8 +1,3 @@
-<% content_for :stylesheets do %>
-  nav {display: none}
-  footer {display:none}
-<% end %>
-
 <div class="login-container">
   <div>
     <%= image_tag 'logo.svg', class: 'login-logo' %>
@@ -33,4 +28,19 @@
     </div>
   </div> 
 </div>
+
+<% content_for :stylesheets do %>
+    .main-container {
+      padding: 0;
+      display: block;
+    }
+
+    nav {
+      display: none;
+    }
+
+    footer {
+      display: none;
+    }
+  <% end %>
 
