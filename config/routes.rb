@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   root "posts#index"
 
-  resources :posts, only: [:index, :create]
+  resources :posts, only: [:index, :create] do
+    resources :comments, :only => [:create]
+  end
 end
