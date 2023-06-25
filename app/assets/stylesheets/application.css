@@ -218,3 +218,18 @@ footer p {
     border-radius: 6px;
     color: white;
 }
+
+.navbar-links {
+    display: flex;
+    gap: 30px;
+    color: white;
+}
+
+.navbar-links a {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.navbar-links a:hover {
+    color: rgb(197, 197, 197);
+}

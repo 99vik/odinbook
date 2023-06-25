@@ -2,5 +2,12 @@
     <%= link_to root_path do %>
         <%= image_tag 'logo.svg', class: 'logo' %>
     <% end %>
-    <%= link_to("Log out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }) %>
+    <div class="navbar-links">
+        <% if current_user %>
+            <%= link_to root_path do %>
+                <%= current_user.username %>
+            <% end %>
+        <% end %>
+        <%= link_to("Log out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }) %>
+    </div>
 </nav>
