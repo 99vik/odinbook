@@ -233,3 +233,11 @@ footer p {
 .navbar-links a:hover {
     color: rgb(197, 197, 197);
 }
+
+.like-btn {
+    height: 26px;
+}
+
+.like-btn:hover {
+    scale: 1.1;
+}

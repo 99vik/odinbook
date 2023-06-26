@@ -2,6 +2,7 @@
     <p>Author: <%= post.author.username %></p>
     <p>Body: <%= post.body %></p>
     <p><%= post.datetime.to_fs(:short) %></p>
+    <%= render "likes/likes", post: post %>
     <%= render "comments/form", post: post %>
     <div class="comments-container"><%= render post.comments%></div>
 </div>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root "posts#index"
 
   resources :posts, only: [:index, :create] do
+    resources :likes, :only => [:create, :destroy]
     resources :comments, :only => [:create]
   end
 end
