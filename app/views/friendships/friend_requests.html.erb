@@ -1,0 +1,11 @@
+<% if @incoming_requests.any? %>
+    <% @incoming_requests.each do |request| %>
+        <div class="friend-request-container">
+            <p><%= request.user.username %></p>
+            <%= button_to "Accept", accept_friend_request_path(request.id), data: { turbo_method: :post} %>
+            <%= button_to "Decline", decline_friend_request_path(request.id), data: { turbo_method: :post} %>
+        </div>
+    <% end %>
+<% else %>
+    <p>No incoming friend requests.</p>
+<% end %>

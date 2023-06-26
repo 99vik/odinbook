@@ -1,0 +1,8 @@
+<% unless user == current_user %>
+
+    <p><%= @status %></p>
+    <% if current_user.friends.include?(user) %>
+    <% else %>
+        <%= button_to "Add friend", friendships_path, data: { turbo_method: :post}, params: { id: user.id } %>
+    <% end %>
+<% end %>

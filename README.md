@@ -6,12 +6,12 @@ https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project
 
 # TODO
 
-* Likes
 * Likes need to be unique in database
 * Add friend
 * Photos as posts
 * Upload a profile picture
 * Implement dynamic validation checks with Stimulus JS(Comments, posts...)
+* Enable partial rendering with turbo for commenting, posting, liking...
 * Fix stylesheet turbo render on application layout
 * Mailer
 * OmniAuth

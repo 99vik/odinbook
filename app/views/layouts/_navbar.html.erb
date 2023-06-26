@@ -4,9 +4,10 @@
     <% end %>
     <div class="navbar-links">
         <% if current_user %>
-            <%= link_to root_path do %>
+            <%= link_to user_path(current_user.id) do %>
                 <%= current_user.username %>
             <% end %>
+            <%= link_to "Friend requests", friend_requests_path %>
         <% end %>
         <%= link_to("Log out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }) %>
     </div>
