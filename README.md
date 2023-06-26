@@ -1,24 +1,18 @@
-# README
+# Odinbook
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the last rails project in Ruby on Rails course, the most extensive project I did up to date.
+This application is some kind of a Facebook replica, with some of it's core features.
+https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project
 
-Things you may want to cover:
+# TODO
 
-* Ruby version
+* Likes
+* Add friend
+* Photos as posts
+* Upload a profile picture
+* Fix stylesheet turbo render on application layout
+* Mailer
+* OmniAuth
+* Styling polish
+* Deploy
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
