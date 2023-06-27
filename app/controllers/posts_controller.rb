@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all.reverse
+    @posts = Post.order(datetime: :desc).first(20)
+    @new_users = User.last(10).reverse
     @post = Post.new
   end
 

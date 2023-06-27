@@ -44,9 +44,16 @@ nav a {
     min-height: 80vh;
     padding: 40px 0;
     display: flex;
+}
+
+.sidebar {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+}
+
+.new-users {
+    background-color: var(--main-bg-color-light);
 }
 
 footer {
@@ -192,6 +199,13 @@ footer p {
     width: 50%;
 }
 
+.posts-with-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
 .posts-container {
     align-items: center;
     display: flex;
@@ -240,4 +254,16 @@ footer p {
 
 .like-btn:hover {
     scale: 1.1;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-title h1 {
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--main-bg-color-dark);
+
 }

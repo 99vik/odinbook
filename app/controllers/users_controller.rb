@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @status = get_friend_status
+    @friend_status = get_friend_status
   end
 
   private

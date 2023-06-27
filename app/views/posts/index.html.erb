@@ -1,6 +1,18 @@
+<div class="posts-with-form">
+    <%= render 'form' %>
+    <div class="posts-container"><%= render @posts %></div>
+</div>
+<div class="sidebar">
+    <div class="new-users">
+        <% @new_users.each do |user| %>
+            <p><%= user.username %></p>
+        <% end %>
+    </div>
+</div>
 
-<%= render 'form' %>
-
-
-
-<div class="posts-container"><%= render @posts %></div>
+<% content_for :stylesheets do %>
+    .main-container {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+<% end %>

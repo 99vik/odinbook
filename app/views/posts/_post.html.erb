@@ -1,6 +1,6 @@
 <div class="post">
     <%= link_to post.author.username, user_path(post.author.id) %>
-    <p>Body: <%= post.body %></p>
+    <p><%= post.body %></p>
     <p><%= post.datetime.to_fs(:short) %></p>
     <%= render "likes/likes", post: post %>
     <%= render "comments/form", post: post %>
