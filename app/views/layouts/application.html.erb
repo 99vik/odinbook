@@ -8,12 +8,11 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <style><%= yield :stylesheets %></style>
-    <meta name="turbo-visit-control" content="reload">
   </head>
 
   <body>
-    <%= render "layouts/navbar" %>
+    <style><%= yield :stylesheets %></style>
+    <%= render partial: "shared/navbar" %>
     <div class="main-container"><%= yield %></div>
-    <%= render "layouts/footer" %>
+    <%= render partial: "shared/footer" %>
 </html>

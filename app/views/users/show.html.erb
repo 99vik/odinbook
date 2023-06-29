@@ -1,11 +1,40 @@
 <div class="profile-container">
     <div class="profile-title">
         <h1><%= @user.username %></h1>
+        <%= render 'friendships/add_logic', user: @user%>
     </div>
-    <%= render 'friendships/add_logic', user: @user%>
-    <% if @user.posts.any? %>
-        <div class="posts-container"><%= render @user.posts %></div>
-    <% else %>
-        <p>User has no posts yet.</p>
-    <% end %>
+
+    <div data-controller="profile" style="width:100%;">
+        <div class="profile-posts-buttons">
+            <%= button_tag "Posts", data: { action: "profile#posts" } %>
+            <%= button_tag "Liked posts", data: { action: "profile#liked_posts" } %>
+            <%= button_tag "Coments", data: { action: "profile#commented_posts" } %>
+        </div>
+        <div>
+            <div class="posts-container" data-profile-target="posts">
+            <p>Posts:</p>
+            <% if @user.posts.any? %>
+                <%= render @user.posts %>
+            <% else %>
+                <p>User has no posts yet.</p>
+            <% end %>
+            </div>
+            <div class="posts-container" data-profile-target="liked_posts">
+            <p>Liked posts:</p>
+            <% if @user.liked_posts.any? %>
+                <%= render @user.liked_posts %>
+            <% else %>
+                <p>User has no liked posts yet.</p>
+            <% end %>
+            </div>
+            <div class="posts-container" data-profile-target="commented_posts">
+            <p>Commented posts:</p>
+            <% if @user.commented_posts.any? %>
+                <%= render @user.commented_posts %>
+            <% else %>
+                <p>User has no commented posts yet.</p>
+            <% end %>
+            </div>
+        </div>
+    </div>
 </div>

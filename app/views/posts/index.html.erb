@@ -1,3 +1,10 @@
+<% content_for :stylesheets do %>
+    .main-container {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+<% end %>
+
 <div class="posts-with-form">
     <%= render 'form' %>
     <div class="posts-container"><%= render @posts %></div>
@@ -9,10 +16,3 @@
         <% end %>
     </div>
 </div>
-
-<% content_for :stylesheets do %>
-    .main-container {
-        display: grid;
-        grid-template-columns: 3fr 1fr;
-    }
-<% end %>

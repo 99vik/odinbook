@@ -44,6 +44,7 @@ nav a {
     min-height: 80vh;
     padding: 40px 0;
     display: flex;
+    justify-content: center;
 }
 
 .sidebar {
@@ -210,7 +211,7 @@ footer p {
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 34px;
     width: 100%;
 }
 
@@ -259,11 +260,19 @@ footer p {
 .profile-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+}
+
+.profile-title {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
 }
 
 .profile-title h1 {
-    font-size: 26px;
+    font-size: 30px;
     font-weight: 400;
     color: var(--main-bg-color-dark);
-
 }
