@@ -192,12 +192,38 @@ footer p {
 }
 
 .post {
+    max-width: 650px;
     display: flex;
     flex-direction: column;
     background-color: var(--main-bg-color-light);
+    gap: 10px;
     border-radius: 10px;
-    padding: 20px 40px;
+    padding: 30px 50px;
     width: 50%;
+}
+
+.post .text {
+    margin-bottom: 20px;
+    letter-spacing: 0.6px;
+    word-spacing: 1.5px;
+}
+
+.post .horizontal-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.post .author {
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--main-bg-color-dark);
+}
+
+.post .post-time {
+    font-size: 14px;
+    color: #7d7d7d;
+    font-weight: 500;
 }
 
 .posts-with-form {
@@ -234,6 +260,47 @@ footer p {
     color: white;
 }
 
+.comments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.comments-container p > a {
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--main-bg-color-dark);
+    margin-right: 6px;
+}
+
+.comment-form textarea {
+    resize: none;
+    outline: none;
+    border: solid 2px rgba(128, 128, 128, 0.356);
+    border-radius: 10px;
+    width: 100%;
+    height: 60px;
+    padding: 4px 4px;
+}
+
+.comment-form .post-btn {
+    border: none;
+    background-color: var(--main-bg-color);
+    border-radius: 8px;
+    padding: 4px 20px;
+    color: white;
+}
+
+.comment-form .post-btn:hover {
+    background-color: var(--main-bg-color-dark);
+    transition: 0.4s;
+}
+
+.comment-form p:last-child {
+    display: flex;
+    justify-content: end;
+}
+
 .navbar-links {
     display: flex;
     gap: 30px;
@@ -255,6 +322,16 @@ footer p {
 
 .like-btn:hover {
     scale: 1.1;
+}
+
+.likes-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.likes-container > div {
+    display: flex;
+    gap: 10px;
 }
 
 .profile-container {

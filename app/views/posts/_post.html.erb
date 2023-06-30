@@ -1,8 +1,10 @@
 <div class="post">
-    <%= link_to post.author.username, user_path(post.author.id) %>
-    <p><%= post.body %></p>
-    <p><%= post.datetime.to_fs(:short) %></p>
+    <div class="horizontal-container">
+        <%= link_to post.author.username, user_path(post.author.id), class: 'author' %>
+        <p class="post-time"><%= post.datetime.to_fs(:short) %></p>
+    </div>
+    <p class="text"><%= post.body %></p>
     <%= render "likes/likes", post: post %>
     <%= render "comments/form", post: post %>
-    <div class="comments-container"><%= render post.comments%></div>
+    <div class="comments-container"><%= render post.comments.reverse %></div>
 </div>
