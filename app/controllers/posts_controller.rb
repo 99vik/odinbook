@@ -5,6 +5,10 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def likes_list
+    @post = Post.find(params[:id])
+  end
+
   def create
     @post = Post.new
 

@@ -12,6 +12,7 @@
 
   <body>
     <style><%= yield :stylesheets %></style>
+    <%= turbo_frame_tag "modal"%>
     <%= render partial: "shared/navbar" %>
     <div class="main-container"><%= yield %></div>
     <%= render partial: "shared/footer" %>

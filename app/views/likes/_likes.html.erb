@@ -9,10 +9,12 @@
                 <%= image_tag 'icons/like.svg', class: 'like-btn' %>
             <% end %>
         <% end %>
-        <p><%= post.likes.count %></p>
+        <%= link_to likes_list_path(post.id), data: { turbo_frame: "modal" } do %>
+            <p class="like-count"><%= post.likes.count %> likes</p>
+        <% end %>
     </div>
     <div>
-        <p><%= post.comments.count %></p>        
-        <%= image_tag 'icons/comment.svg', class: 'like-btn' %>
+        <p class="like-count" data-action="click->post#show"><%= post.comments.count %> comments</p>        
+        <%= image_tag 'icons/comment.svg', class: 'like-btn', data: { action: "click->post#show" } %>
     </div>
 </div>

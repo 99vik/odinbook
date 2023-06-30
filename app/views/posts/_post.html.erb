@@ -1,4 +1,4 @@
-<div class="post">
+<div class="post" data-controller="post">
     <div class="horizontal-container">
         <%= link_to post.author.username, user_path(post.author.id), class: 'author' %>
         <p class="post-time"><%= post.datetime.to_fs(:short) %></p>
@@ -6,5 +6,11 @@
     <p class="text"><%= post.body %></p>
     <%= render "likes/likes", post: post %>
     <%= render "comments/form", post: post %>
-    <div class="comments-container"><%= render post.comments.reverse %></div>
+    <div class="comments-container" data-post-target="comments"><%= render post.comments.reverse %></div>
+    <hr data-post-target="show">
+    <% if post.comments.none? %>
+        <p class="show-comments" data-post-target="show" data-action="click->post#show">Post a first comment.</p>
+    <% else %>
+        <p class="show-comments" data-post-target="show" data-action="click->post#show">Show comments.</p>
+    <% end %>
 </div>

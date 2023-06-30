@@ -193,6 +193,7 @@ footer p {
 
 .post {
     max-width: 650px;
+    min-width: 500px;
     display: flex;
     flex-direction: column;
     background-color: var(--main-bg-color-light);
@@ -239,6 +240,18 @@ footer p {
     flex-direction: column;
     gap: 34px;
     width: 100%;
+}
+
+.post .show-comments {
+    align-self: center;
+    width: fit-content;
+    color: var(--main-bg-color-dark);
+    text-align: center;
+}
+
+.post .show-comments:hover {
+    cursor: pointer;
+    scale: 1.05;
 }
 
 .post-form textarea {
@@ -321,12 +334,27 @@ footer p {
 }
 
 .like-btn:hover {
+    cursor: pointer;
     scale: 1.1;
+}
+
+.post hr {
+    border-top: 0.5px solid var(--main-bg-color-dark);
 }
 
 .likes-container {
     display: flex;
     justify-content: space-between;
+}
+
+.likes-container .like-count {
+    text-decoration: none;
+    color: black;
+}
+
+.like-count:hover {
+    cursor: pointer;
+    color: var(--main-bg-color-dark);
 }
 
 .likes-container > div {
@@ -353,3 +381,90 @@ footer p {
     font-weight: 400;
     color: var(--main-bg-color-dark);
 }
+
+.posts-buttons-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.profile-posts-buttons {
+    width: 40%;
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+}
+
+.profile-posts-buttons button {
+    border: 2px solid #3b82f6;
+    background-color: white;
+    color: var(--main-bg-color);
+    padding: 6px 12px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-weight: 500;
+}
+
+.profile-posts-buttons button:hover {
+    cursor: pointer;
+}
+
+button.profile-selected-posts {
+    background-color: var(--main-bg-color);
+    color: white;
+    transition: 0.2s;
+}
+
+.posts-buttons-container hr {
+    margin-top: -2px;
+    width: 40%;
+    border: 1px solid var(--main-bg-color);
+}
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 60%;
+    width: 22%;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3);
+}
+
+.modal div:first-child {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal div:first-child p:first-child {
+    color: var(--main-bg-color);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.modal hr {
+    border-top: 1px solid var(--main-bg-color);
+}
+
+.modal-list {
+    height: 90%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: auto;
+}
+
+.modal-list a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+

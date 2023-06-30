@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show]
+  get '/friend_list/:id/', to: "users#friend_list", as: "friend_list"
+  get '/likes_list/:id/', to: "posts#likes_list", as: "likes_list"
 
   resources :friendships, only: [:create, :destroy]
 
