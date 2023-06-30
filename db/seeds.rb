@@ -174,8 +174,8 @@ def create_friendships
   users.each do |user|
     (1..40).to_a.sample(rand(0..15)).each do |friend|
       next if user.id == friend || Friendship.where(user_id: user.id).where(friend_id: friend).any?
-      Friendship.create(user_id: user.id, friend_id: friend)
-      Friendship.create(user_id: friend, friend_id: user.id)
+      Friendship.create(user_id: user.id, friend_id: friend, status: "friends")
+      Friendship.create(user_id: friend, friend_id: user.id, status: "friends")
     end
   end
 end

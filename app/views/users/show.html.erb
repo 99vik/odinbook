@@ -4,9 +4,9 @@
         <%= render 'friendships/add_logic', user: @user%>
     </div>
 
-    <div>
+    <div class="friends-link">
         <%= link_to friend_list_path(@user.id), data: { turbo_frame: "modal" } do %>
-            <p><%= @user.friends.count %> Friends.</p>
+            <p class="friends-status"><%= @user.friends.count %> Friends</p>
         <% end %>
     </div>
 
