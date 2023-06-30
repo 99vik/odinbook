@@ -1,6 +1,27 @@
 <div class="profile-container">
+    <% if @user.id == current_user.id %>
+        <div class="account-options-container">
+            <p>Account Options</p>
+            <hr>
+            <%= link_to friend_requests_path, class: "horizontal-container" do %>
+                <%= image_tag 'icons/account-multiple.svg', class: 'icon' %>
+                <p>Friend requests</p>
+            <% end %>
+            <%= link_to edit_user_registration_path, class: "horizontal-container" do %>
+                <%= image_tag 'icons/cog.svg', class: 'icon' %>
+                <p>Settings</p>
+            <% end %>
+        </div>
+    <% end %>
     <div class="profile-title">
-        <h1><%= @user.username %></h1>
+        <div>
+            <% if @user.image.attached? %>
+                <%= image_tag @user.image, class: "profile-picture" %>
+            <% else %>
+                <%= image_tag 'icons/default-account-profile.svg', class: "profile-picture" %>                
+            <% end %>
+            <h1><%= @user.username %></h1>
+        </div>
         <%= render 'friendships/add_logic', user: @user%>
     </div>
 

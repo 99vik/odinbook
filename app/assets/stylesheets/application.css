@@ -216,6 +216,22 @@ footer p {
     margin-bottom: 16px;
 }
 
+.account-options-container .horizontal-container {
+    color: var(--main-bg-color-dark);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.account-options-container .horizontal-container:hover {
+    text-decoration: underline;
+}
+
+.account-options-container .icon {
+    height: 20px;
+}
+
 .post .author {
     text-decoration: none;
     font-size: 18px;
@@ -317,12 +333,15 @@ footer p {
 
 .navbar-links {
     display: flex;
-    gap: 30px;
+    gap: 40px;
     color: white;
 }
 
 .navbar-links a {
-    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 16px;
     font-weight: 500;
 }
 
@@ -369,6 +388,27 @@ footer p {
     align-items: center;
     gap: 20px;
     width: 100%;
+    position: relative;
+}
+
+.account-options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 40px;
+    left: 5%;
+    color: var(--main-bg-color-dark);
+    font-weight: bold;
+}
+
+.account-options-container hr {
+    border-top: 1px solid var(--main-bg-color);
+    margin-top: -18px;
+}
+
+.account-options-container * {
+    font-size: 18px;
 }
 
 .add-friend-container {
@@ -491,10 +531,33 @@ button.profile-selected-posts {
     overflow: auto;
 }
 
+.modal-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .modal-list a {
     text-decoration: none;
     color: black;
     font-weight: 500;
 }
 
+.profile-picture {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+.profile-picture-small {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
+.profile-title div:first-child {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
 

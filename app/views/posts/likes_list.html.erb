@@ -12,7 +12,12 @@
         <hr>
         <div class="modal-list">
             <% @post.likes.each do |like| %>
-                <%= link_to user_path(like.user.id), data: { turbo_frame: "_top" } do %>
+                <%= link_to user_path(like.user.id), data: { turbo_frame: "_top" }, class: "modal-link" do %>
+                    <% if like.user.image.attached? %>
+                        <%= image_tag like.user.image, class: "profile-picture-small" %>
+                    <% else %>
+                        <%= image_tag 'icons/default-account-profile.svg', class: "profile-picture-small" %>
+                    <% end %>
                     <p><%= like.user.username %></p>
                 <% end %>
             <% end %>

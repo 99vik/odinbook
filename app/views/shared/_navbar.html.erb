@@ -4,9 +4,16 @@
     <% end %>
     <div class="navbar-links">
         <% if current_user %>
-            <%= link_to user_path(current_user.id) do %>
-                <%= current_user.username %>
-            <% end %>
+            <div>
+                <%= link_to user_path(current_user.id) do %>
+                    <% if current_user.image.attached? %>
+                        <%= image_tag current_user.image, class: "profile-picture-small" %>
+                    <% else %>
+                        <%= image_tag 'icons/default-account-profile-white.svg', class: "profile-picture-small" %>
+                    <% end %>
+                    <p><%= current_user.username %></p>
+                <% end %>
+            </div>
             <%= link_to "Friend requests", friend_requests_path %>
         <% end %>
         <%= link_to("Log out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }) %>
