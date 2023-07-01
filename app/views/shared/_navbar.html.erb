@@ -14,7 +14,6 @@
                     <p><%= current_user.username %></p>
                 <% end %>
             </div>
-            <%= link_to "Friend requests", friend_requests_path %>
         <% end %>
         <%= link_to("Log out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }) %>
     </div>

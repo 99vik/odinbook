@@ -43,21 +43,21 @@
         <div>
             <div class="posts-container" data-profile-target="posts">
             <% if @user.posts.any? %>
-                <%= render @user.posts %>
+                <%= render @user.posts.reverse %>
             <% else %>
                 <p>User has no posts yet.</p>
             <% end %>
             </div>
             <div class="posts-container" data-profile-target="liked_posts">
             <% if @user.liked_posts.any? %>
-                <%= render @user.liked_posts %>
+                <%= render @user.liked_posts.reverse %>
             <% else %>
                 <p>User has no liked posts yet.</p>
             <% end %>
             </div>
             <div class="posts-container" data-profile-target="commented_posts">
             <% if @user.commented_posts.any? %>
-                <%= render @user.commented_posts %>
+                <%= render @user.commented_posts.reverse %>
             <% else %>
                 <p>User has no commented posts yet.</p>
             <% end %>

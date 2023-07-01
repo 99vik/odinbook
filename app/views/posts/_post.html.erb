@@ -1,8 +1,26 @@
 <div class="post" data-controller="post">
+    <% if post.author == current_user %>
+        <%= link_to post_path(post.id), data: {
+            turbo_method: :delete,
+            turbo_confirm: "Delete post?"
+        } do %>
+            <%= image_tag 'icons/delete.svg', class: 'icon' %>
+        <% end %>
+    <% end %>
     <div class="horizontal-container">
-        <%= link_to post.author.username, user_path(post.author.id), class: 'author' %>
+        <div>
+            <% if post.author.image.attached? %>
+                <%= image_tag post.author.image, class: "profile-picture-small" %>
+            <% else %>
+                <%= image_tag 'icons/default-account-profile.svg', class: "profile-picture-small" %>
+            <% end %>
+            <%= link_to post.author.username, user_path(post.author.id), class: 'author' %>
+        </div>
         <p class="post-time"><%= post.datetime.to_fs(:short) %></p>
     </div>
+    <% if post.image.attached? %>
+        <%= image_tag post.image, class: 'post-img' %>
+    <% end%>
     <p class="text"><%= post.body %></p>
     <%= render "likes/likes", post: post %>
     <%= render "comments/form", post: post %>

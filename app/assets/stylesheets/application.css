@@ -192,16 +192,40 @@ footer p {
 }
 
 .post {
-    max-width: 650px;
-    min-width: 500px;
+    position: relative;
+    max-width: 580px;
     display: flex;
     flex-direction: column;
     background-color: var(--main-bg-color-light);
-    gap: 10px;
+    gap: 4px;
     border-radius: 10px;
     padding: 30px 50px;
     width: 50%;
     box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.post-form-title {
+    color: var(--main-bg-color-dark);
+    font-weight: 500;
+}
+
+.post .icon {
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.post .icon:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.post .post-img {
+    align-self: center;
+    height: 400px;
+    width: 400px;
+    margin-bottom: 20px;
 }
 
 .post .text {
@@ -214,6 +238,12 @@ footer p {
     display: flex;
     justify-content: space-between;
     margin-bottom: 16px;
+}
+
+.horizontal-container div:first-child {
+    display: flex;
+    gap: 6px;
+    align-items: center;
 }
 
 .account-options-container .horizontal-container {
@@ -232,6 +262,24 @@ footer p {
     height: 20px;
 }
 
+.post-form .icon {
+    height: 35px;
+}
+
+.post-form .icon:hover {
+    opacity: 0.5;
+}
+
+.post-image-input {
+    position: absolute;
+    top: 15px;
+    right: -35px;
+}
+
+.post-form {
+    position: relative;
+}
+
 .post .author {
     text-decoration: none;
     font-size: 18px;
@@ -242,6 +290,8 @@ footer p {
     font-size: 14px;
     color: #7d7d7d;
     font-weight: 500;
+    display: flex;
+    align-items: center;
 }
 
 .posts-with-form {
@@ -293,10 +343,19 @@ footer p {
 .comments-container {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
 }
 
-.comments-container p > a {
+.comments-container div {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: -6px;
+}
+
+
+
+.comments-container a {
     font-weight: 500;
     text-decoration: none;
     color: var(--main-bg-color-dark);

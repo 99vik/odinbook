@@ -15,6 +15,7 @@ class PostsController < ApplicationController
     @post.body = params[:post][:body]
     @post.author = current_user
     @post.datetime = DateTime.now
+    @post.image = params[:post][:image]
 
     if @post.save
       redirect_to root_path
@@ -23,5 +24,12 @@ class PostsController < ApplicationController
       @posts = Post.all
       render :index, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    redirect_to root_path
   end
 end

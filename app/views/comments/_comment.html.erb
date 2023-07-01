@@ -1,1 +1,11 @@
-<p><%= link_to comment.author.username, user_path(comment.author.id) %> <%= comment.body %></p>
+<p>
+    <div>
+        <% if comment.author.image.attached? %>
+            <%= image_tag comment.author.image, class: "profile-picture-small" %>
+        <% else %>
+            <%= image_tag 'icons/default-account-profile.svg', class: "profile-picture-small" %>
+        <% end %>
+        <%= link_to comment.author.username, user_path(comment.author.id) %>
+    </div> 
+    <%= comment.body %>
+</p>
