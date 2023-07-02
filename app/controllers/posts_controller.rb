@@ -17,12 +17,14 @@ class PostsController < ApplicationController
     @post.datetime = DateTime.now
     @post.image = params[:post][:image]
 
-    if @post.save
-      redirect_to root_path
-    else
-      flash.alert = "Minimum post length is 8 characters."
-      @posts = Post.all
-      render :index, status: :unprocessable_entity
+    respond_to do |format|
+      if @post.save
+        format.turbo_stream { render :create, locals: { post: @post } }
+      else
+        format.html {
+          render :index, status: :unprocessable_entity
+        }
+      end
     end
   end
 
@@ -30,6 +32,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
 
-    redirect_to root_path
+    respond_to do |format|
+      format.turbo_stream { render :delete }
+    end
   end
 end

@@ -194,6 +194,7 @@ footer p {
 .post {
     position: relative;
     max-width: 580px;
+    min-width: 500px;
     display: flex;
     flex-direction: column;
     background-color: var(--main-bg-color-light);
@@ -338,6 +339,10 @@ footer p {
     padding: 8px 24px;
     border-radius: 6px;
     color: white;
+}
+
+.post-form input[type="submit"]:hover {
+    background-color: var(--main-bg-color-dark);
 }
 
 .comments-container {

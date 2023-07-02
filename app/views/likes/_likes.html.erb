@@ -1,4 +1,4 @@
-<div class="likes-container">
+<div class="likes-container" id="like-<%= post.id %>">
     <div>
         <% if current_user.liked_posts.include?(post) %>
             <%= link_to post_like_path(post.id, Like.where(user_id: current_user.id).where(post_id: post.id).first.id), data: { turbo_method: :delete } do %>

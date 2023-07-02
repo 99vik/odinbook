@@ -1,13 +1,15 @@
-<%= form_with model: @post, class: "post-form" do |form| %>
-    <div class="field">
-        <%= form.label :image, class: 'post-image-input' do %>
-          <%= image_tag 'icons/image-area.svg', class: 'icon' %>
-        <% end %>
-        <%= form.file_field :image, accept: 'image/png,image/gif,image/jpeg', style: "display:none;" %>
-    </div>
-    <div class="field">
-      <%= form.label :body, "Whats on your mind?", class: 'post-form-title' %><br>
-      <%= form.text_area :body %>
-    </div>
-    <div class="field"><%= form.submit %></div>
+<%= turbo_frame_tag "new_post" do %>
+  <%= form_with model: Post.new, class: "post-form" do |form| %>
+      <div class="field">
+          <%= form.label :image, class: 'post-image-input' do %>
+            <%= image_tag 'icons/image-area.svg', class: 'icon' %>
+          <% end %>
+          <%= form.file_field :image, accept: 'image/png,image/gif,image/jpeg', style: "display:none;" %>
+      </div>
+      <div class="field">
+        <%= form.label :body, "Whats on your mind?", class: 'post-form-title' %><br>
+        <%= form.text_area :body %>
+      </div>
+      <div class="field"><%= form.submit %></div>
+  <% end %>
 <% end %>

@@ -6,7 +6,12 @@ class CommentsController < ApplicationController
         body: params[:comment][:body]
         )
     if comment.save
-      redirect_to root_path
+      @post = post
+      @comment = comment
+      
+      respond_to do |format|
+        format.turbo_stream { render :create, comment: @comment  }
+      end
     end
   end
 

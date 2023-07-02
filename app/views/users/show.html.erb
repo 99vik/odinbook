@@ -41,7 +41,7 @@
             <hr>
         </div>
         <div>
-            <div class="posts-container" data-profile-target="posts">
+            <div id="posts" class="posts-container" data-profile-target="posts">
             <% if @user.posts.any? %>
                 <%= render @user.posts.reverse %>
             <% else %>

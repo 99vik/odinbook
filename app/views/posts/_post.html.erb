@@ -1,4 +1,4 @@
-<div class="post" data-controller="post">
+<div id="<%= post.id %>" class="post" data-controller="post">
     <% if post.author == current_user %>
         <%= link_to post_path(post.id), data: {
             turbo_method: :delete,
@@ -24,7 +24,7 @@
     <p class="text"><%= post.body %></p>
     <%= render "likes/likes", post: post %>
     <%= render "comments/form", post: post %>
-    <div class="comments-container" data-post-target="comments"><%= render post.comments.reverse %></div>
+    <div class="comments-container" id="comments-<%= post.id %>" data-post-target="comments"><%= render post.comments.reverse %></div>
     <hr data-post-target="show">
     <% if post.comments.none? %>
         <p class="show-comments" data-post-target="show" data-action="click->post#show">Post a first comment.</p>
