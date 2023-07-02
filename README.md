@@ -8,9 +8,9 @@ Exercise link: https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-
 
 # TODO
 
+* Notifications
 * see uploaded image on post
 * Enable partial rendering with turbo for commenting, posting, liking, friend requests...
-* Notifications
 * Likes need to be unique in database
 * Implement dynamic validation checks with Stimulus JS for sign up
 * Load certain number of posts on index and dynamically load more with scrolling

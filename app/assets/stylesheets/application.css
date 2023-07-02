@@ -397,8 +397,12 @@ footer p {
 
 .navbar-links {
     display: flex;
-    gap: 40px;
+    gap: 50px;
     color: white;
+}
+
+nav .icon {
+    height: 30px;
 }
 
 .navbar-links a {
@@ -410,7 +414,7 @@ footer p {
 }
 
 .navbar-links a:hover {
-    color: rgb(197, 197, 197);
+    opacity: 0.6;
 }
 
 .like-btn {

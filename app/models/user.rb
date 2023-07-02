@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_one_attached :image
 
+  has_many :notifications, foreign_key: 'notifier_id', dependent: :destroy
+
   validates :email, uniqueness: true
   validates :username, uniqueness: true
 

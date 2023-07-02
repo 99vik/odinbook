@@ -1,0 +1,13 @@
+<% if @notifications.any? %>
+    <div class="notifications-container">
+        <% current_user.notifications.each do |notification| %>
+            <div class="notification-container">
+                <p>
+                    <%= notification.notification_type %>
+                </p>
+            </div>
+        <% end %>
+    </div>
+<% else %>
+    <p>No new notifications.</p>
+<% end %>

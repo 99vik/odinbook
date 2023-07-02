@@ -30,10 +30,23 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    destroy_posts_notifications(@post)
     @post.destroy
 
     respond_to do |format|
       format.turbo_stream { render :delete }
+    end
+  end
+
+  private
+
+  def destroy_posts_notifications(post)
+    post.comments.each do |comment|
+      Notification.where(comment_id: comment.id).first.destroy
+    end
+
+    post.likes.each do |like|
+      Notification.where(like_id: like.id).first.destroy
     end
   end
 end
