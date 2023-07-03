@@ -8,8 +8,6 @@ Exercise link: https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-
 
 # TODO
 
-* see uploaded image on post
-* Enable partial rendering with turbo for commenting, posting, liking, friend requests...
 * Implement dynamic validation checks with Stimulus JS for sign up
 * Load certain number of posts on index and dynamically load more with scrolling
 * Mailer
