@@ -14,7 +14,7 @@ class FriendshipsController < ApplicationController
 
     Friendship.create(user_id: user1.id, friend_id: user2.id, status: "friends")
     Friendship.create(user_id: user2.id, friend_id: user1.id, status: "friends")
-    redirect_to friend_requests_path
+    redirect_back(fallback_location: root_path)
   end
 
   def decline_friend_request
@@ -22,7 +22,8 @@ class FriendshipsController < ApplicationController
     notification = Notification.where(friendship_id: params[:id])
     notification.destroy_all
     request.destroy
-    redirect_to friend_requests_path
+
+    redirect_back(fallback_location: root_path)
   end
 
   def create
@@ -40,7 +41,7 @@ class FriendshipsController < ApplicationController
       friendship_id: friendship.id
     )
 
-    redirect_to user_path(params[:id])
+    redirect_back(fallback_location: root_path)
   end
 
   def destroy

@@ -269,6 +269,7 @@ footer p {
 
 .post-form .icon:hover {
     opacity: 0.5;
+    cursor: pointer;
 }
 
 .post-image-input {
@@ -482,6 +483,45 @@ nav .icon {
     align-items: center;
 }
 
+.friend-request-container {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--main-bg-color-light);
+    padding: 26px 18px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.friend-request-container a {
+    color: var(--main-bg-color-dark);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.friend-request-container div {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.friend-request-container button {
+    background-color: var(--main-bg-color);
+    color: white;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 10px;
+}
+
+.friend-request-container button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.friend-request-container button.delete {
+    background-color: darkred;
+}
+
 .add-friend-container button {
     background-color: var(--main-bg-color);
     border: none;
@@ -489,6 +529,7 @@ nav .icon {
     padding: 8px 14px;
     font-weight: 500;
     color: white;
+    cursor: pointer;
 }
 
 .add-friend-container .delete-btn {
@@ -646,6 +687,8 @@ button.profile-selected-posts {
     background-color: var(--main-bg-color-light);
     padding: 26px 18px;
     display: flex;
+    align-items: center;
+    gap: 10px;
     justify-content: start;
     border-radius: 10px;
     width: 500px;
