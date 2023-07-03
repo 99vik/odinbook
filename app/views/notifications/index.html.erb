@@ -1,5 +1,6 @@
 <div class="vertical-container-buttons">
     <div class="top-page-buttons">
+        <%= link_to "Back", :back %>
         <%= button_to "Clear all", clear_notifications_path %>
     </div>
     <% if @notifications.any? %>

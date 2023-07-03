@@ -4,13 +4,13 @@ class LikesController < ApplicationController
     @like.save
     @post = @like.post
 
-
-    p Notification.create(
-      notification_type: "like",
-      actor_id: current_user.id,
-      notifier_id: @post.author.id,
-      like_id: @like.id
-    )  
+    unless current_user.id == @post.author.id
+      Notification.create(
+        notification_type: "like",
+        actor_id: current_user.id,
+        notifier_id: @post.author.id,
+        like_id: @like.id)  
+    end
     
     respond_to do |format|
       format.turbo_stream { render :create, post: @post  }

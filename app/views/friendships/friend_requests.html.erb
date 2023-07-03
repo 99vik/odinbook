@@ -2,7 +2,7 @@
 
 <div class="vertical-container-buttons">
     <div class="top-page-buttons">
-        <%= button_to "Back", root_path %>
+        <%= link_to "Back", :back %>
     </div>
     <% if @incoming_requests.any? %>
         <div class="notifications-container">
