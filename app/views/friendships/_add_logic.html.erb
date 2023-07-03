@@ -1,7 +1,10 @@
 <% unless user == current_user %>
     <div class="add-friend-container">
         <% if @friend_status == "friends" %>
-            <p class="friends-status">You are friends</p>
+            <%= button_to "Remove friend", remove_friend_path(user.id), class: "delete-btn", data: { 
+                turbo_method: :post, 
+                turbo_confirm: "Remove friend?" 
+                } %>
         <% elsif @friend_status == "pending" %>
             <%= button_to "Unsend friend request", decline_friend_request_path(current_user.friendships.where(friend_id: @user.id).first.id), data: { turbo_method: :post} %>
         <% elsif @friend_status == "respond" %>

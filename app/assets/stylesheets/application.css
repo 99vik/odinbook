@@ -491,6 +491,15 @@ nav .icon {
     color: white;
 }
 
+.add-friend-container .delete-btn {
+    background-color: rgb(156, 2, 2);
+}
+
+.add-friend-container .delete-btn:hover {
+    cursor: pointer;
+    background-color: rgb(104, 1, 1);
+}
+
 .friends-status {
     font-weight: bold;
     color: var(--main-bg-color-dark);

@@ -7,7 +7,11 @@ class FriendshipsController < ApplicationController
     request = Friendship.find(params[:id])
     user1 = request.user
     user2 = request.friend
+
+    notification = Notification.where(friendship_id: params[:id])
+    notification.destroy_all
     request.destroy
+
     Friendship.create(user_id: user1.id, friend_id: user2.id, status: "friends")
     Friendship.create(user_id: user2.id, friend_id: user1.id, status: "friends")
     redirect_to friend_requests_path
@@ -15,6 +19,8 @@ class FriendshipsController < ApplicationController
 
   def decline_friend_request
     request = Friendship.find(params[:id])
+    notification = Notification.where(friendship_id: params[:id])
+    notification.destroy_all
     request.destroy
     redirect_to friend_requests_path
   end
@@ -26,9 +32,26 @@ class FriendshipsController < ApplicationController
         status: "pending"
     )
     friendship.save
+
+    Notification.create(
+      notification_type: "friendship",
+      actor_id: current_user.id,
+      notifier_id: friendship.friend.id,
+      friendship_id: friendship.id
+    )
+
     redirect_to user_path(params[:id])
   end
 
   def destroy
+    user = User.find(params[:id])
+    friendship1 = Friendship.where(user_id: current_user.id)
+                            .where(friend_id: user.id)
+    friendship2 = Friendship.where(user_id: user.id)
+                            .where(friend_id: current_user.id)                            
+    friendship1.destroy_all
+    friendship2.destroy_all
+
+    redirect_to user_path(params[:id])
   end
 end
