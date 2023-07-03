@@ -4,7 +4,8 @@ class LikesController < ApplicationController
     @like.save
     @post = @like.post
 
-    Notification.create(
+
+    p Notification.create(
       notification_type: "like",
       actor_id: current_user.id,
       notifier_id: @post.author.id,

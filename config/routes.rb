@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root "posts#index"
 
-  resources :posts, only: [:index, :create, :destroy] do
+  resources :posts, only: [:index, :create, :destroy, :show] do
     resources :likes, :only => [:create, :destroy]
     resources :comments, :only => [:create]
   end
@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   resources :friendships, only: [:create, :destroy]
 
   get 'notifications', to: "notifications#index"
+  post 'clear_notifications', to: "notifications#clear_notifications", as: "clear_notifications"
+  delete 'notifications/:id', to: "notifications#destroy", as: "delete_notification"
 
   get '/friend_requests', to: 'friendships#friend_requests'
   post '/friend_requests/:id/accept', to: 'friendships#accept_friend_request', as: 'accept_friend_request'

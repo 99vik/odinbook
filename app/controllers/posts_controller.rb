@@ -5,6 +5,10 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def likes_list
     @post = Post.find(params[:id])
   end
@@ -42,11 +46,11 @@ class PostsController < ApplicationController
 
   def destroy_posts_notifications(post)
     post.comments.each do |comment|
-      Notification.where(comment_id: comment.id).first.destroy
+      Notification.where(comment_id: comment.id).destroy_all
     end
 
     post.likes.each do |like|
-      Notification.where(like_id: like.id).first.destroy
+      Notification.where(like_id: like.id).destroy_all
     end
   end
 end

@@ -358,8 +358,6 @@ footer p {
     margin-bottom: -6px;
 }
 
-
-
 .comments-container a {
     font-weight: 500;
     text-decoration: none;
@@ -629,3 +627,62 @@ button.profile-selected-posts {
     align-items: center;
 }
 
+.notifications-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.notification-container {
+    background-color: var(--main-bg-color-light);
+    padding: 26px 18px;
+    display: flex;
+    justify-content: start;
+    border-radius: 10px;
+    width: 500px;
+    position: relative;
+}
+
+.notification-container a {
+    text-decoration: none;
+    color: var(--main-bg-color-dark);
+}
+
+.notification-container .icon {
+    position: absolute;
+    height: 24px;
+    top: 6px;
+    right: 6px;
+}
+
+.notification-container .icon:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.vertical-container-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+}
+
+.top-page-buttons {
+    width: 500px;
+    display: flex;
+    justify-content: end;
+}
+
+.top-page-buttons button {
+    background-color: var(--main-bg-color);
+    border: none;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 16px;
+}
+
+.top-page-buttons button:hover {
+    cursor: pointer;
+    background-color: var(--main-bg-color-dark);
+}
