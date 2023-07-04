@@ -8,8 +8,6 @@ Exercise link: https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-
 
 # TODO
 
-* Implement dynamic validation checks with Stimulus JS for sign up
-* Load certain number of posts on index and dynamically load more with scrolling
 * Mailer
 * OmniAuth
 * Styling polish

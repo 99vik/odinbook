@@ -10,9 +10,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+    if current_user
+      UserMailer.welcome_user(current_user).deliver_now
+    end
+  end
 
   # GET /resource/edit
   # def edit

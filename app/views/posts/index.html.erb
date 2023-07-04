@@ -1,18 +1,31 @@
 <% content_for :stylesheets do %>
     .main-container {
         display: grid;
-        grid-template-columns: 3fr 1fr;
+        grid-template-columns: 2fr 1fr;
     }
 <% end %>
 
 <div class="posts-with-form">
     <%= render 'form' %>
     <div id="posts" class="posts-container"><%= render @posts %></div>
+    <%= button_to "Load more", load_more_posts_path, class: "load-btn" %>
 </div>
 <div class="sidebar">
     <div class="new-users">
+        <p>New users</p>
+        <hr>
         <% @new_users.each do |user| %>
-            <p><%= user.username %></p>
+            <%= link_to user_path(user.id) do %>
+                <% if user.image.attached? %>
+                    <%= image_tag user.image, class: "profile-picture-small" %>
+                <% else %>
+                    <%= image_tag 'icons/default-account-profile.svg', class: "profile-picture-small" %>
+                <% end %>
+                <p><%= user.username %></p>
+            <% end %>
         <% end %>
+    </div>
+    <div class="new-users">
+        <p>New friend requests.</p>
     </div>
 </div>

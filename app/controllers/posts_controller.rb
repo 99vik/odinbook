@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+class PostsController < ApplicationController  
   def index
     @posts = Post.order(datetime: :desc).first(20)
     @new_users = User.last(10).reverse
@@ -39,6 +39,14 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.turbo_stream { render :delete }
+    end
+  end
+
+  def load_more
+    @posts = Post.order(datetime: :desc).offset(20).first(20)
+
+    respond_to do |format|
+      format.turbo_stream { render :add }
     end
   end
 

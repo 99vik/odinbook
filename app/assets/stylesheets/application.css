@@ -51,10 +51,37 @@ nav a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
 }
 
 .new-users {
+    padding: 25px 60px;
     background-color: var(--main-bg-color-light);
+    border-radius: 15px;
+}
+
+.new-users p:first-child {
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+}
+
+.new-users hr {
+    border-top: 1px solid var(--main-bg-color);
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+
+.new-users a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    gap: 4px;
+}
+
+.new-users a:hover {
+    text-decoration: underline;
 }
 
 footer {
@@ -193,15 +220,13 @@ footer p {
 
 .post {
     position: relative;
-    max-width: 580px;
-    min-width: 500px;
+    width: 580px;
     display: flex;
     flex-direction: column;
     background-color: var(--main-bg-color-light);
     gap: 4px;
     border-radius: 10px;
     padding: 30px 50px;
-    width: 50%;
     box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -274,8 +299,8 @@ footer p {
 
 .post-image-input {
     position: absolute;
-    top: 15px;
-    right: -35px;
+    bottom: 35px;
+    left: 5px;
 }
 
 .post-form {
@@ -384,6 +409,19 @@ footer p {
     color: white;
 }
 
+.load-btn {
+    border: none;
+    background-color: var(--main-bg-color);
+    border-radius: 8px;
+    padding: 6px 22px;
+    color: white;
+}
+
+.load-btn:hover {
+    cursor: pointer;
+    background-color: var(--main-bg-color-dark);
+}
+
 .comment-form .post-btn:hover {
     background-color: var(--main-bg-color-dark);
     transition: 0.4s;
@@ -403,7 +441,6 @@ footer p {
 nav .icon {
     height: 30px;
 }
-
 .navbar-links a {
     display: flex;
     align-items: center;
@@ -788,7 +825,8 @@ button.profile-selected-posts {
     margin-bottom: 2px;
 }
 
-.user-registration-container .field input[type="text"],.user-registration-container .field input[type="email"] {
+.user-registration-container .field input[type="text"],.user-registration-container .field input[type="email"], .user-registration-container .field input[type="password"] {
+    width: 100%;
     outline: none;
     border: 1px solid var(--main-bg-color);
     padding: 4px;
@@ -812,7 +850,7 @@ button.profile-selected-posts {
     opacity: 0.6;
 }
 
-.user-registration-container .field input[type="text"]:focus ,.user-registration-container .field input[type="email"]:focus {
+.user-registration-container .field input[type="text"]:focus ,.user-registration-container .field input[type="email"]:focus, .user-registration-container .field input[type="password"]:focus {
     transition: 0.3s;
     box-shadow: 0px 0px 3px 0px var(--main-bg-color);
 }
@@ -838,6 +876,20 @@ button.profile-selected-posts {
     color: white;
     padding: 8px 16px;
     font-size: 16px;
+}
+
+.user-registration-container .errors {
+    font-size: 16px;
+}
+
+.user-registration-container li {
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+.user-registration-container h2 {
+    font-size: 22px;
+    color: var(--main-bg-color);
 }
 
 .back-btn:hover {

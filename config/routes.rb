@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :comments, :only => [:create]
   end
 
+  post '/load_more_posts', to: "posts#load_more", as: "load_more_posts"
+
   resources :users, only: [:show]
   get '/friend_list/:id/', to: "users#friend_list", as: "friend_list"
   get '/likes_list/:id/', to: "posts#likes_list", as: "likes_list"
