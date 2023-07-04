@@ -8,8 +8,8 @@ Exercise link: https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-
 
 # TODO
 
-* Mailer
 * OmniAuth
+* Red circle on new notification, websockets 
 * Styling polish
 * Deploy
 

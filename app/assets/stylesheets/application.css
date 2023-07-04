@@ -55,7 +55,8 @@ nav a {
 }
 
 .new-users {
-    padding: 25px 60px;
+    width: 320px;
+    padding: 25px 40px;
     background-color: var(--main-bg-color-light);
     border-radius: 15px;
 }
@@ -181,7 +182,30 @@ footer p {
     font-size: 20px;
 }
 
+.reset-password-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.reset-password-btn button {
+    align-self: center;
+    width: fit-content;
+    background-color: var(--main-bg-color);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    color: white;
+    font-size: 16px;
+}
+
+.reset-password-btn button:hover {
+    background-color: #29569e;
+    cursor: pointer;
+}
+
 .login-inputs input[type="submit"]:hover {
+    cursor: pointer;
     background-color: var(--main-bg-color-dark);
     transition: 0.3s;
 }
@@ -191,6 +215,7 @@ footer p {
     font-size: 16px;
     position: absolute;
     bottom: 25px;
+    text-align: center;
 }
 
 .sign-up-btn {
@@ -847,6 +872,7 @@ button.profile-selected-posts {
 }
 
 .user-registration-container input[type="submit"]:hover {
+    cursor: pointer;
     opacity: 0.6;
 }
 
