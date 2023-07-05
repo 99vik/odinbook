@@ -17,6 +17,8 @@
         <div>
             <% if @user.image.attached? %>
                 <%= image_tag @user.image, class: "profile-picture" %>
+            <% elsif @user.avatar_url %>
+                <%= image_tag @user.avatar_url, class: "profile-picture" %>
             <% else %>
                 <%= image_tag 'icons/default-account-profile.svg', class: "profile-picture" %>                
             <% end %>
@@ -27,7 +29,7 @@
 
     <div class="friends-link">
         <%= link_to friend_list_path(@user.id), data: { turbo_frame: "modal" } do %>
-            <p class="friends-status"><%= @user.friends.count %> Friends</p>
+            <p class="friends-status"><%= @user.friendships.where(status: "friends").count %> Friends</p>
         <% end %>
     </div>
 

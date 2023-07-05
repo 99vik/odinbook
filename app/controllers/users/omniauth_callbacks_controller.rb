@@ -1,12 +1,16 @@
 # frozen_string_literal: true
 
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  # You should configure your model like this:
-  # devise :omniauthable, omniauth_providers: [:twitter]
+  def github
+    user = User.from_omniauth(request.env['omniauth.auth'])
 
-  # You should also create an action method in this controller like this:
-  # def twitter
-  # end
+    if user.present?
+      sign_out_all_scopes
+      sign_in_and_redirect user, event: :authentication
+    else
+      redirect_to new_user_session_path
+    end
+  end
 
   # More info at:
   # https://github.com/heartcombo/devise#omniauth

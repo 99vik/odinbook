@@ -41,7 +41,12 @@
       <%= flash.alert %>
       <%= flash.notice %>
     </div>
-  </div> 
+    <div class="login-omniauth-container">
+      <%= button_to user_github_omniauth_authorize_path, data: { turbo: false } do %>
+        <%= image_tag("github-sign-in.png") %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 

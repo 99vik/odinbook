@@ -4,6 +4,8 @@
 <div>
     <% if notification.actor.image.attached? %>
         <%= image_tag notification.actor.image, class: "profile-picture-small" %>
+    <% elsif notification.actor.avatar_url %>
+        <%= image_tag notification.actor.avatar_url, class: "profile-picture-small" %>
     <% else %>
         <%= image_tag 'icons/default-account-profile.svg', class: "profile-picture-small" %>
     <% end %>

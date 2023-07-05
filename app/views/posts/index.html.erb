@@ -18,6 +18,8 @@
             <%= link_to user_path(user.id) do %>
                 <% if user.image.attached? %>
                     <%= image_tag user.image, class: "profile-picture-small" %>
+                <% elsif user.avatar_url %>
+                    <%= image_tag user.avatar_url, class: "profile-picture-small" %>
                 <% else %>
                     <%= image_tag 'icons/default-account-profile.svg', class: "profile-picture-small" %>
                 <% end %>

@@ -55,6 +55,9 @@ nav a {
 }
 
 .new-users {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     width: 320px;
     padding: 25px 40px;
     background-color: var(--main-bg-color-light);
@@ -124,6 +127,28 @@ footer p {
 .login-container p {
     color: white;
     font-size: 20px;
+}
+
+.login-omniauth-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: -70px;
+}
+
+.login-omniauth-container button {
+    border: none;
+    background-color: var(--main-bg-color);
+}
+
+.login-omniauth-container img {
+    width: 260px;
+}
+
+.login-omniauth-container img:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
 
 .login-inputs {

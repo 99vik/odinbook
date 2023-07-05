@@ -11,6 +11,8 @@
         <div>
             <% if post.author.image.attached? %>
                 <%= image_tag post.author.image, class: "profile-picture-small" %>
+            <% elsif post.author.avatar_url %>
+                    <%= image_tag post.author.avatar_url, class: "profile-picture-small" %>
             <% else %>
                 <%= image_tag 'icons/default-account-profile.svg', class: "profile-picture-small" %>
             <% end %>
