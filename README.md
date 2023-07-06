@@ -1,6 +1,6 @@
 
 ![login](https://github.com/99vik/odinbook/assets/106154264/4ac1ec14-cc7c-4f15-84e8-b977dad43bdb)
-![Untitled design](https://github.com/99vik/odinbook/assets/106154264/cd8ecb96-e783-432e-8ba6-3a9e3ed8c227)
+![ezgif com-crop](https://github.com/99vik/odinbook/assets/106154264/b0e306a5-26f1-4e7f-95ae-1860d589f1bc)
 
 # Odinbook
 
