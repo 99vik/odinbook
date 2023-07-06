@@ -418,7 +418,9 @@ footer p {
 }
 
 .post-form input[type="submit"]:hover {
+    transition: 0.3s;
     background-color: var(--main-bg-color-dark);
+    cursor: pointer;
 }
 
 .comments-container {
@@ -475,6 +477,7 @@ footer p {
 .comment-form .post-btn:hover {
     background-color: var(--main-bg-color-dark);
     transition: 0.4s;
+    cursor: pointer;
 }
 
 .comment-form p:last-child {
