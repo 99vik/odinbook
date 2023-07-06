@@ -46,6 +46,6 @@ Exercise link: https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-
 
 
 ## Notes
-- If you plan to run this app locally, after installing gems and migrating database you can run `rails db:seed`, which is going to a run a script and create users with random posts, likes, comments and friends.
+- If you plan to run this app locally, after installing gems and migrating database you can run `rails db:seed`, which is going to a run a script and create users with random posts, likes, comments and friends. After seeding database you need to run `ActiveRecord::Base.connection.reset_pk_sequence!('users')` in rails console, to reset the ID auto-incrementing sequence in users table, otherwise you will get an error when you try to create new sign-up. 
 
 - I did not write any tests for this app which I don't believe is a good idea, although this is app is not that comprehensive, I think writing tests is a good habit that will pay off later in some more serious projects
