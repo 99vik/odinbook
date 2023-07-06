@@ -31,16 +31,17 @@ Exercise link: https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-
     - User can remove someone from his friends on clicking "Remove friend" on user's profile
 
 - Notifications
-    - After another user sends you a friend request, likes or comments your post, you can see it on your notifications 
+    - After another user sends you a friend request, likes or comments your post, you can see it in your notifications 
 
 - Mailer
     - Used mailer to create welcome e-mail after sign up
-    - Devise mailer for reseting password
+    - Devise mailer for resetting password
 
 - Styling
-    - Did not use any framework or library for styling, I was writing my own CSS for whole the app
+    - Did not use any CSS framework or library for styling, I was writing my own CSS for the whole app
 
 
 ## Notes
 - If you plan to run this app locally, after installing gems and migrating database you can run `rails db:seed`, which is going to a run a script and create users with random posts, likes, comments and friends.
+
 - I did not write any tests for this app which I don't believe is a good idea, although this is app is not that comprehensive, I think writing tests is a good habit that will pay off later in some more serious projects
