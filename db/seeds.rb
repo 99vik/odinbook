@@ -186,4 +186,5 @@ generate_likes_for_posts
 generate_comments_for_posts
 create_friendships
 
+ActiveRecord::Base.connection.reset_pk_sequence!('users')
 
